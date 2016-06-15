@@ -64,10 +64,10 @@ export default {
     },
     pickerPosY: {
       get() {
-        return (1 - this.lightness / 50) * 255
+        return (1 - this.lightness / (100 - this.saturation / 2)) * 255
       },
       set(y) {
-        this.lightness = (1 - y / 255) * 50
+        this.lightness = (1 - y / 255) * (100 - this.saturation / 2)
       }
     }
   },
